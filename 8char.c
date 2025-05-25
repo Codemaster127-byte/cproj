@@ -37,7 +37,7 @@ void encrypt_file(const char *infile, const char *outfile, const char *enc_map, 
         printf("Cannot open input file.\n");
         exit(1);
     }
-    FILE *fout = fopen(outfile, "w"); // Open output file in text mode
+    FILE *fout = fopen(outfile, "wb"); // Open output file in binary mode (fix for binary files)
     if (!fout) {
         printf("Cannot open output file.\n");
         fclose(fin);
